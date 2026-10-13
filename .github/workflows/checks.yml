@@ -8,18 +8,18 @@ on:
 permissions:
   contents: read
 jobs:
-passes:
+  passes:
     runs-on: ubuntu-latest
     steps:
       - run: echo "This check passes."
-fails:
+  fails:
     if: github.head_ref == 'gs-topic'
     runs-on: ubuntu-latest
     steps:
       - run: |
           echo "This check fails on purpose."
           exit 1
-skipped:
+  skipped:
     if: false
     runs-on: ubuntu-latest
     steps:
